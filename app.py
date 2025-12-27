@@ -4,8 +4,9 @@ st.set_page_config(page_title="Next Word Prediction", layout="centered")
 
 import pickle
 import numpy as np
-from keras.models import load_model
-from keras.preprocessing.sequence import pad_sequences
+from tensorflow.keras.models import load_model
+from tensorflow.keras.preprocessing.sequence import pad_sequences
+
 
 # ------------------------------
 # Load saved files
