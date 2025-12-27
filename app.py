@@ -4,15 +4,15 @@ st.set_page_config(page_title="Next Word Prediction", layout="centered")
 
 import pickle
 import numpy as np
-from tensorflow.keras.models import load_model
-from tensorflow.keras.preprocessing.sequence import pad_sequences
+from keras.models import load_model
+from keras.preprocessing.sequence import pad_sequences
 
 # ------------------------------
 # Load saved files
 # ------------------------------
 @st.cache_resource
 def load_resources():
-    model = load_model("lstm_model.h5")
+    model = load_model("lstm_model.h5", compile = False)
     with open("tokenizer.pickle", "rb") as f:
         tokenizer = pickle.load(f)
     with open("max_len.pkl", "rb") as f:
